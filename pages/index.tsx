@@ -1,12 +1,21 @@
 import type { NextPage } from "next";
 import { SignInButton, ethos } from "ethos-connect";
 import { Disconnect, Fund, Mint, WalletActions } from "../components";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Board from "../containers/Board";
 
 const Home: NextPage = () => {
   const { status, wallet } = ethos.useWallet();
 
   return (
-    <div className="flex justify-between items-start">
+    <div className="flex justify-between items-start styles.container">
+
+      <Head>
+        <title>Sui Tac Toe</title>
+        <meta name="description" content="By Suizzle" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="p-12 flex-1">Status: {status}</div>
 
       <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex-6">
@@ -16,6 +25,11 @@ const Home: NextPage = () => {
           </SignInButton>
         ) : (
           <div className="flex flex-col gap-6">
+
+              <main className={styles.main}>
+                <Board />
+              </main>
+
             <div className="flex flex-col gap-2">
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                 Connected to wallet
@@ -32,13 +46,9 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="flex flex-col gap-4">
-              First, fund this wallet from the Sui faucet:
-              <Fund />
-              then
+              Thanks for playing. You can 
               <Mint />
-              or
-              <WalletActions />
-              or
+              or play more Sui Tac Toe ☝️ or
               <Disconnect />
             </div>
           </div>
