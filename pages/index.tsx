@@ -12,9 +12,9 @@ const Home: NextPage = () => {
     <div className="flex justify-between items-start styles.container">
 
       <Head>
-        <title>Sui Tac Toe</title>
+        <title>Sui Tac Toe 🌊</title>
         <meta name="description" content="By Suizzle" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/suitactoe.png" />
       </Head>
       <div className="p-12 flex-1">Status: {status}</div>
 
